@@ -43,7 +43,7 @@
       file.dependencies['discord.js'] = '^13.16.0'
       fs.writeFileSync('package.json', JSON.stringify(file, null, 4))
       exec('npm i')
-      throw new Error("Seems you arent using v13 please re-run or run `npm i discord.js@13.16.0`");
+      throw new Error("Seems you arent using v13 please re-run or run `npm i discord.js@14.14.1`");
     }
 
     // check if discord-logs is v2
