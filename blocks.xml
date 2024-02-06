@@ -1,0 +1,348 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="=6`ushn0ewC41R$-^dvJ">prefix</variable>
+    <variable id="OZ0l|^XRQH?T?s;b$B%X">arguments</variable>
+    <variable id="9p=y^o3Q9D#i[*`~t8Qd">commandwithprefix</variable>
+    <variable id="dN-GQox{6nqmX%so5NT^">command</variable>
+  </variables>
+  <block type="s4d_login" id="{|lO_b-0fA9`}/b6#m6T" x="0" y="0">
+    <value name="TOKEN">
+      <block type="text" id="T3=]`vNu7E~Pv%]r^%YC">
+        <field name="TEXT">MTIwNDIyNDY2NTEwMzUwNzUxNg.GmFAhO.aaYoCj-4s2b5nxgR2jqZxlAHJQ7i4KjwnDluUM</field>
+      </block>
+    </value>
+  </block>
+  <block type="s4d_on_connected" id="HcFcs6Jw;M1hHa#=JL9n" x="0" y="106">
+    <statement name="STATEMENTS">
+      <block type="variables_set" id="GZDP:Red|*ajsbPV}guA">
+        <field name="VAR" id="=6`ushn0ewC41R$-^dvJ">prefix</field>
+        <value name="VALUE">
+          <block type="text" id="[iP}[(^%wkCP!|kzFvV/">
+            <field name="TEXT">&gt;</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_message" id="+Q@qA4DZ.)H0dU~:qJFA" x="0" y="284">
+    <statement name="STATEMENTS">
+      <block type="variables_set" id="Fo+ksP#~73~o,EeQmq{u">
+        <field name="VAR" id="OZ0l|^XRQH?T?s;b$B%X">arguments</field>
+        <value name="VALUE">
+          <block type="lists_split" id="1YzV9Eu2@GGwP5RREIIR">
+            <mutation mode="SPLIT"></mutation>
+            <field name="MODE">SPLIT</field>
+            <value name="INPUT">
+              <block type="s4d_message_content" id="E#m(;pB|W+d+AtJCc{5e"></block>
+            </value>
+            <value name="DELIM">
+              <shadow type="text" id="Z.|mO+X9gt-/BR;jjMkI">
+                <field name="TEXT"> </field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="U^i0Ox!/+F6x[NrTqTpR">
+            <field name="VAR" id="9p=y^o3Q9D#i[*`~t8Qd">commandwithprefix</field>
+            <value name="VALUE">
+              <block type="lists_getIndex" id="9ul#e70.^`!G^_~-BlK~">
+                <mutation statement="false" at="true"></mutation>
+                <field name="MODE">GET_REMOVE</field>
+                <field name="WHERE">FROM_START</field>
+                <value name="VALUE">
+                  <block type="variables_get" id="z-Mavm-5KXE/Y;G)]0%i">
+                    <field name="VAR" id="OZ0l|^XRQH?T?s;b$B%X">arguments</field>
+                  </block>
+                </value>
+                <value name="AT">
+                  <block type="math_number" id="n6Es1J;;TYupl;g]g)Eg">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="controls_if" id="?0_$Y+BD1xxSa0KA1t.,">
+                <value name="IF0">
+                  <block type="s4d_starts_with" id="[DhMa1*^%sHH}OksH^ME">
+                    <value name="STRING">
+                      <shadow type="text" id="iMH.F@gOp=IV:%r$~sSK">
+                        <field name="TEXT">abc</field>
+                      </shadow>
+                      <block type="variables_get" id=",-bX4=FVdN5l;kLY*Q3l">
+                        <field name="VAR" id="9p=y^o3Q9D#i[*`~t8Qd">commandwithprefix</field>
+                      </block>
+                    </value>
+                    <value name="SUBSTRING">
+                      <shadow type="text" id="xwE0]+?l@G3~],}}ymCg">
+                        <field name="TEXT">a</field>
+                      </shadow>
+                      <block type="variables_get" id="VfKek(*Bv2_ut)Hi##?:">
+                        <field name="VAR" id="=6`ushn0ewC41R$-^dvJ">prefix</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="variables_set" id="2}t[rFyvtZ`O=Qr%1$#0">
+                    <field name="VAR" id="dN-GQox{6nqmX%so5NT^">command</field>
+                    <value name="VALUE">
+                      <block type="text_getSubstring" id="tk/+|mA*Z|4~B9|.CuKM">
+                        <mutation at1="true" at2="false"></mutation>
+                        <field name="WHERE1">FROM_START</field>
+                        <field name="WHERE2">LAST</field>
+                        <value name="STRING">
+                          <block type="variables_get" id="h17=Uep1/B8X+$A*ozx3">
+                            <field name="VAR" id="9p=y^o3Q9D#i[*`~t8Qd">commandwithprefix</field>
+                          </block>
+                        </value>
+                        <value name="AT1">
+                          <block type="math_arithmetic" id="zMrmYg}ltkz~B:dd]rz}">
+                            <field name="OP">ADD</field>
+                            <value name="A">
+                              <shadow type="math_number" id=":0-MoF^cB]edp7KvQD!F">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="text_length" id="B7Hoy-?0PwUN)uQz2-x$">
+                                <value name="VALUE">
+                                  <shadow type="text" id="EQ,{AN8:Pd9Xzc%y@@r*">
+                                    <field name="TEXT">abc</field>
+                                  </shadow>
+                                  <block type="variables_get" id="Oh^urZbwt%S(?:4fRptd">
+                                    <field name="VAR" id="=6`ushn0ewC41R$-^dvJ">prefix</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <shadow type="math_number" id="g@Q2d^jm*|VId)}Yl^:C">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="controls_if" id="3XA36VU);D_1N5vf9p(Z">
+                        <value name="IF0">
+                          <block type="logic_compare" id="1igBlMs)G_=BaFXSd3rc">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="variables_get" id="764~nc#(*|4bhyY/,K{h">
+                                <field name="VAR" id="dN-GQox{6nqmX%so5NT^">command</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="text" id="[P2gt2r%QKJF3|~Q$E~+">
+                                <field name="TEXT">Roll</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="s4d_reply" id="-{l,tE6ZGFbL6`Pn_@~#">
+                            <value name="CONTENT">
+                              <shadow type="text" id="aL1?|+/#9ra54-jg7_Gm">
+                                <field name="TEXT">You have written the following content after !say:</field>
+                              </shadow>
+                              <block type="text_join" id="!k0.l/?^v%f8F;S=kqE;">
+                                <mutation items="2"></mutation>
+                                <value name="ADD0">
+                                  <block type="jg_text_remake_paragraph_quotes" id="MR72D+lyS,wHm83-5RPf">
+                                    <field name="TEXT">Player 1 - </field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="math_random_int" id="6vDtEr/XRpY3tI0E8U%h">
+                                    <value name="FROM">
+                                      <shadow type="math_number" id="/P;yFQqMXrPz!pzYt[:f">
+                                        <field name="NUM">0</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="TO">
+                                      <shadow type="math_number" id="bKyUmBHgQ;M,dB!Wf/4W">
+                                        <field name="NUM">50</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="s4d_reply" id="ZCsGmbF=Q7CKH-IWdT]Z">
+                                <value name="CONTENT">
+                                  <shadow type="text" id="aL1?|+/#9ra54-jg7_Gm">
+                                    <field name="TEXT">You have written the following content after !say:</field>
+                                  </shadow>
+                                  <block type="text_join" id="izWplYvHdHHUnjbU}G%0">
+                                    <mutation items="2"></mutation>
+                                    <value name="ADD0">
+                                      <block type="jg_text_remake_paragraph_quotes" id="?N%r4[l,PZ%UXG[?#*:2">
+                                        <field name="TEXT">Player 2 - </field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="math_random_int" id="!^AU%z(q/V}qQ!(C{~z(">
+                                        <value name="FROM">
+                                          <shadow type="math_number" id="O)DeR)Q1]6fuj_Q8Y4y-">
+                                            <field name="NUM">0</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="TO">
+                                          <shadow type="math_number" id="[gg-jP)]bg|xvoy$(_ye">
+                                            <field name="NUM">50</field>
+                                          </shadow>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="s4d_reply" id="-8_4L4E6,I%4ZYRgO6hH">
+                                    <value name="CONTENT">
+                                      <shadow type="text" id="aL1?|+/#9ra54-jg7_Gm">
+                                        <field name="TEXT">You have written the following content after !say:</field>
+                                      </shadow>
+                                      <block type="text_join" id="I^RMI=sf+8t:PO=}B~!g">
+                                        <mutation items="2"></mutation>
+                                        <value name="ADD0">
+                                          <block type="jg_text_remake_paragraph_quotes" id="}0NB4,-}I,9ImM=SC:;}">
+                                            <field name="TEXT">Player 3 - </field>
+                                          </block>
+                                        </value>
+                                        <value name="ADD1">
+                                          <block type="math_random_int" id="qABO{}$y*9W;N#m}iJsG">
+                                            <value name="FROM">
+                                              <shadow type="math_number" id="BYT5:o}Zrz^n7mme)$L1">
+                                                <field name="NUM">0</field>
+                                              </shadow>
+                                            </value>
+                                            <value name="TO">
+                                              <shadow type="math_number" id="BfmU53)@a80m9H^j4:=k">
+                                                <field name="NUM">50</field>
+                                              </shadow>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="controls_if" id="^[9fQk.$aJzzzfdx*f+H">
+                            <value name="IF0">
+                              <block type="logic_compare" id="-Ed7jGW5F?$^ZPvB-`?+">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="variables_get" id="gK)(y`OYCPEr^gM%,m^|">
+                                    <field name="VAR" id="dN-GQox{6nqmX%so5NT^">command</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="text" id="R2QFxy$e;hwUym;%zC=L">
+                                    <field name="TEXT">help</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="s4d_reply" id="rUJF1~m_R@5N.%uFH0O(">
+                                <value name="CONTENT">
+                                  <shadow type="text" id="aL1?|+/#9ra54-jg7_Gm">
+                                    <field name="TEXT">My prefix &gt;</field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="s4d_reply" id="`:,`a]-Y~4UQIC[K-5gE">
+                                    <value name="CONTENT">
+                                      <shadow type="text" id="E{7,IlGtSIN9=H/[lIhg">
+                                        <field name="TEXT">Commands - </field>
+                                      </shadow>
+                                    </value>
+                                    <next>
+                                      <block type="s4d_reply" id="$DuK*P~iN$%`_j)tE[TL">
+                                        <value name="CONTENT">
+                                          <shadow type="text" id="*};I-`bu^=Zj4r2jAhN-">
+                                            <field name="TEXT"> 1. Roll - To get players on Teamraid Time.</field>
+                                          </shadow>
+                                        </value>
+                                        <next>
+                                          <block type="s4d_reply" id="q);m8+*V^uE$U?!-ll%i">
+                                            <value name="CONTENT">
+                                              <shadow type="text" id="$Mjh*A^ejIUDS_c7D1cX">
+                                                <field name="TEXT"> 2. Raid Guide - To get better tips of Raid and Teamraid</field>
+                                              </shadow>
+                                            </value>
+                                            <next>
+                                              <block type="s4d_reply" id="Hk`~+zJfnK!)EDb5Z?nm">
+                                                <value name="CONTENT">
+                                                  <shadow type="text" id="X4Ti-~o~1zCJ/Aqp-glX">
+                                                    <field name="TEXT"> 3. Claim Guide - To get better tips of Claiming</field>
+                                                  </shadow>
+                                                </value>
+                                                <next>
+                                                  <block type="s4d_reply" id="=@eFi!Y{$}e!Icpzopl%">
+                                                    <value name="CONTENT">
+                                                      <shadow type="text" id="T+Ir~YH0`Yhd%E`-#I#T">
+                                                        <field name="TEXT"> 4. Sell Guide - To get better tips of Selling Materials</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <next>
+                                                      <block type="s4d_reply" id="]]1)}w;].IfmEIu{2:!z">
+                                                        <value name="CONTENT">
+                                                          <shadow type="text" id="WI3zxJ-5Qo=:Xd@`X2.l">
+                                                            <field name="TEXT"> 5. Farm Guide - To get better tips of Farms</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <next>
+                                                          <block type="s4d_reply" id="#R8:w[Aw(llSuWMD(2QP">
+                                                            <value name="CONTENT">
+                                                              <shadow type="text" id="!jSuOKeAsVPfmTp2q75.">
+                                                                <field name="TEXT"> 6. Payday Guide - To get better tips of Payday</field>
+                                                              </shadow>
+                                                            </value>
+                                                            <next>
+                                                              <block type="s4d_reply" id="GaMlGl3$Ikk`)NbtRS.]">
+                                                                <value name="CONTENT">
+                                                                  <shadow type="text" id="J{xnJoG/T%L9!TfOt^pL">
+                                                                    <field name="TEXT"> 7. Beginner Guide - A simple guide for beginners</field>
+                                                                  </shadow>
+                                                                </value>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
